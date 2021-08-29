@@ -12,6 +12,7 @@ ENV REACT_APP_BBB_PLAYBACK_BUILD=$TAG_PLAYBACK
 # so we use the master branch 
 # RUN svn checkout https://github.com/bigbluebutton/bbb-playback/tags/$TAG_PLAYBACK /bbb-playback
 RUN git clone https://github.com/bigbluebutton/bbb-playback.git /bbb-playback && cd /bbb-playback && git checkout 5934114aa434aba9b73b1a4c2ce228d18f276610
+COPY favicon.ico bbb-playback/public/
 RUN cd /bbb-playback && npm install && npm run-script build
 
 # --------------------
